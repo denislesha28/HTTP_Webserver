@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbe8405c-c075-48f5-a547-61100b3a1966" name="Default Changelist" comment="" />
+    <list default="true" id="cbe8405c-c075-48f5-a547-61100b3a1966" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +29,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
@@ -38,6 +45,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -69,6 +81,26 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="329" y="26" key="#Project_Structure" timestamp="1604773341749">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="329" y="26" key="#Project_Structure/0.0.1676.902@0.0.1676.902" timestamp="1604773341749" />
+    <state width="1620" height="222" key="GridCell.Tab.0.bottom" timestamp="1604773703475">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state width="1620" height="222" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1604773703475" />
+    <state width="1620" height="222" key="GridCell.Tab.0.center" timestamp="1604773703474">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state width="1620" height="222" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1604773703474" />
+    <state width="1620" height="222" key="GridCell.Tab.0.left" timestamp="1604773703474">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state width="1620" height="222" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1604773703474" />
+    <state width="1620" height="222" key="GridCell.Tab.0.right" timestamp="1604773703474">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1604773703474" />
     <state x="230" y="8" key="SettingsEditor" timestamp="1604770931935">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
