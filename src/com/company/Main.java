@@ -23,6 +23,8 @@ public class Main {
             }
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            String test=in.readLine();
+            System.out.println(test);
         } catch (IOException e) {
             e.printStackTrace();
         }
