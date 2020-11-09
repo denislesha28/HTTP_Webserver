@@ -26,6 +26,7 @@ public class Main {
             HTTPRequestHandler handler=new HTTPRequestHandler();
             handler.readHeader(in);
             handler.readPayload(in);
+            handler.savePayload();
         } catch (IOException e) {
             e.printStackTrace();
         }
