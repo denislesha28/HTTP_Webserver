@@ -23,8 +23,9 @@ public class Main {
             }
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            String test=in.readLine();
-            System.out.println(test);
+            HTTPRequestHandler handler=new HTTPRequestHandler();
+            handler.readHeader(in);
+            handler.readPayload(in);
         } catch (IOException e) {
             e.printStackTrace();
         }
