@@ -25,7 +25,7 @@ public class Main {
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             HTTPRequestHandler handler=new HTTPRequestHandler();
             handler.readHeader(in);
-            handler.readPayload(in);
+            //handler.readPayload(in);
             handler.savePayload();
         } catch (IOException e) {
             e.printStackTrace();

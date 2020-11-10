@@ -7,22 +7,22 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HTTPRequestHandler {
     private StringBuilder payload;
     private String headerInfo;
+    public List<String> messages=new ArrayList<>();
+
     public void readHeader(BufferedReader in) throws IOException {
         while((headerInfo=in.readLine()).length() != 0){
             System.out.println(headerInfo);
         }
     }
 
-    public void readPayload(BufferedReader in)throws IOException{
-        payload = new StringBuilder();
-        while(in.ready()){
-            payload.append((char) in.read());
-        }
-        System.out.println("Payload data is: "+payload.toString());
+    public void readMessage(BufferedReader in)throws IOException{
+
     }
 
     public void savePayload() throws IOException {
@@ -49,4 +49,11 @@ public class HTTPRequestHandler {
         writer.flush();
         writer.close();
     }
+
+
+   /* public void savePayload() {
+        messages.set(2,"ckyaaddawd");
+        messages.set(payload.charAt(11),payload.toString());
+    }
+*/
 }
