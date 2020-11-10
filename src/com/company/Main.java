@@ -1,8 +1,5 @@
 package com.company;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-import org.w3c.dom.ls.LSOutput;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -23,7 +20,7 @@ public class Main {
             }
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            HTTPRequestHandler handler=new HTTPRequestHandler();
+            RequestContext handler=new RequestContext();
             handler.readHeader(in);
             //handler.readPayload(in);
             handler.savePayload();

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HTTPRequestHandler {
+public class RequestContext {
     private StringBuilder payload;
     private String headerInfo;
     public List<String> messages=new ArrayList<>();
