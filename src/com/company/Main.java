@@ -22,7 +22,7 @@ public class Main {
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             RequestContext handler=new RequestContext();
             handler.readHeader(in);
-            //handler.readPayload(in);
+            handler.readPayload(in);
             handler.savePayload();
         } catch (IOException e) {
             e.printStackTrace();
