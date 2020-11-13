@@ -1,12 +1,12 @@
 package com.company;
 
 import com.sun.beans.decoder.StringElementHandler;
-import jdk.nashorn.internal.parser.JSONParser;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.Character.SPACE_SEPARATOR;
 
 public class RequestContext {
     private StringBuilder payload;
@@ -27,13 +27,17 @@ public class RequestContext {
     public int saveHTTPHeader(List<String> list,BufferedReader in) throws IOException {
         readHeader(in);
         list.add(headerInfo);
-        System.out.println(headerInfo);
         return list.size();
     }
 
     public String readHTTPVerb(BufferedReader in) throws IOException {
-        String verb=in.readLine();
-        verb=verb.substring(0-4);
+        String verb="";
+        for (int i=0;i<headerInfo.length();i++){
+            if(headerInfo.charAt(i)==' '){
+                break;
+            }
+            verb+=headerInfo.charAt(i);
+        }
         return verb;
     }
 
