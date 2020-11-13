@@ -1,12 +1,9 @@
 package com.company;
 
-import com.sun.beans.decoder.StringElementHandler;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static java.lang.Character.SPACE_SEPARATOR;
 
 public class RequestContext {
     private StringBuilder payload;
@@ -25,7 +22,6 @@ public class RequestContext {
     }
 
     public int saveHTTPHeader(List<String> list,BufferedReader in) throws IOException {
-        readHeader(in);
         list.add(headerInfo);
         return list.size();
     }
@@ -41,6 +37,21 @@ public class RequestContext {
         return verb;
     }
 
+    public String readRequest(BufferedReader in)throws IOException{
+        String request="";
+        for (int i=0;i<headerInfo.length();i++){
+            if(headerInfo.charAt(i)=='/'){
+                for (int j=i+1;j<headerInfo.length();j++){
+                    request+=headerInfo.charAt(j);
+                    if(headerInfo.charAt(j)==' '){
+                        return request;
+                    }
+                }
+            }
+        }
+        return request;
+    }
+
     public void readPayload(BufferedReader in)throws IOException{
         payload = new StringBuilder();
         while(in.ready()){
@@ -52,6 +63,7 @@ public class RequestContext {
     public int savePayload(List<String> list,BufferedReader in) throws IOException {
         readPayload(in);
         list.add(payload.toString());
+        System.out.println("Payload: "+payload.toString());
         payload=null; // empty payload
         return list.size();
     }

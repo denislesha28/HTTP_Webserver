@@ -27,6 +27,7 @@ public class Main {
             RequestContext handler=new RequestContext();
             handler.readHeader(in);
             clientRequest=handler.readHTTPVerb(in);
+            System.out.println(handler.readRequest(in));
             if(clientRequest.compareTo("GET")==0){
 
             }
@@ -39,9 +40,11 @@ public class Main {
             else if (clientRequest.compareTo("DELETE")==0){
 
             }
-            int responseId=handler.saveHTTPHeader(headers,in);
-            int responseIdMessage=handler.savePayload(messages,in);
-            System.out.println(messages);
+            int temp=handler.saveHTTPHeader(headers,in);
+            int responseId=handler.savePayload(messages,in);
+            out.print("CKYADWDAWDWADcu");
+            out.flush();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
