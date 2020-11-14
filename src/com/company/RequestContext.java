@@ -10,6 +10,7 @@ public class RequestContext {
     private String headerInfo;
 
     public void readHeader(BufferedReader in) throws IOException {
+        headerInfo="";
         String line;
         while((line=in.readLine()).length() != 0){
             System.out.println(line);
@@ -26,7 +27,15 @@ public class RequestContext {
         return list.size();
     }
 
-    public String readHTTPVerb(BufferedReader in) throws IOException {
+    public void updateHTTPHeader(int position,List<String> list){
+        list.set(position,headerInfo);
+    }
+
+    public void deleteHTTPHeader(int position,List<String> list){
+        list.set(position,headerInfo);
+    }
+
+    public String readHTTPVerb() throws IOException {
         String verb="";
         for (int i=0;i<headerInfo.length();i++){
             if(headerInfo.charAt(i)==' '){
@@ -67,5 +76,29 @@ public class RequestContext {
         payload=null; // empty payload
         return list.size();
     }
+
+
+    public String returnPayloadAt(int position,List<String> list) throws IOException {
+        return list.get(position);
+    }
+
+    public void updatePayloadAt(int position,List<String> list,BufferedReader in) throws IOException{
+        readPayload(in);
+        list.set(position,payload.toString());
+        payload=null;
+    }
+
+
+
+    public void deletePayloadAt(int position,List<String> list) throws IOException{
+        list.set(position,payload.toString());
+    }
+
+    public void printMessages(List<String> list){
+        System.out.println(list);
+    }
+
+
+
 
 }

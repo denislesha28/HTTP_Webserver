@@ -8,6 +8,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 
@@ -26,19 +28,31 @@ public class Main {
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             RequestContext handler=new RequestContext();
             handler.readHeader(in);
-            clientRequest=handler.readHTTPVerb(in);
-            System.out.println(handler.readRequest(in));
+            clientRequest=handler.readHTTPVerb();
             if(clientRequest.compareTo("GET")==0){
-
+                handler.printMessages(messages);
             }
             else if (clientRequest.compareTo("POST")==0){
-
+                /*
+                String regex = "messages\\/[0-9]";
+                String request = handler.readRequest(in);
+                Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+                Matcher matcher = pattern.matcher(request);
+                if(matcher.matches()){
+                    System.out.println("True");
+                }
+                */
+                handler.savePayload(messages,in);
+                handler.saveHTTPHeader(headers,in);
             }
             else if (clientRequest.compareTo("PUT")==0){
-
+                System.out.println(clientRequest.length()-1);
+                handler.updatePayloadAt(clientRequest.length()-1,messages,in);
+                handler.updateHTTPHeader(clientRequest.length()-1,headers);
             }
             else if (clientRequest.compareTo("DELETE")==0){
-
+                handler.deletePayloadAt(clientRequest.length()-1,messages);
+                handler.deleteHTTPHeader(clientRequest.length()-1,messages);
             }
             int temp=handler.saveHTTPHeader(headers,in);
             int responseId=handler.savePayload(messages,in);
