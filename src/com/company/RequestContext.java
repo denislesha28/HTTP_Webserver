@@ -28,11 +28,19 @@ public class RequestContext {
     }
 
     public void updateHTTPHeader(int position,List<String> list){
+        if(list.isEmpty()){
+            System.out.println("Messages are Empty!!");
+            return;
+        }
         list.set(position,headerInfo);
     }
 
     public void deleteHTTPHeader(int position,List<String> list){
-        list.set(position,headerInfo);
+        if(list.isEmpty()){
+            System.out.println("Messages are Empty!!");
+            return;
+        }
+        list.remove(position);
     }
 
     public String readHTTPVerb() throws IOException {
@@ -46,7 +54,7 @@ public class RequestContext {
         return verb;
     }
 
-    public String readRequest(BufferedReader in)throws IOException{
+    public String readRequest()throws IOException{
         String request="";
         for (int i=0;i<headerInfo.length();i++){
             if(headerInfo.charAt(i)=='/'){
@@ -83,6 +91,10 @@ public class RequestContext {
     }
 
     public void updatePayloadAt(int position,List<String> list,BufferedReader in) throws IOException{
+        if(list.isEmpty()){
+            System.out.println("Messages are Empty!!");
+            return;
+        }
         readPayload(in);
         list.set(position,payload.toString());
         payload=null;
@@ -91,7 +103,11 @@ public class RequestContext {
 
 
     public void deletePayloadAt(int position,List<String> list) throws IOException{
-        list.set(position,payload.toString());
+        if(list.isEmpty()){
+            System.out.println("Messages are Empty!!");
+            return;
+        }
+        list.remove(position);
     }
 
     public void printMessages(List<String> list){

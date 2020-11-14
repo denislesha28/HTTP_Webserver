@@ -18,6 +18,8 @@ public class Main {
         List<String> messages=new ArrayList<>();
         List<String> headers=new ArrayList<>();
         String clientRequest;
+        messages.add("adwd");
+        headers.add("adwdad");
         try {
             ServerSocket serverSocket = new ServerSocket(portNumber);
             Socket clientSocket = serverSocket.accept();
@@ -29,6 +31,13 @@ public class Main {
             RequestContext handler=new RequestContext();
             handler.readHeader(in);
             clientRequest=handler.readHTTPVerb();
+            String operation=handler.readRequest();
+            //int index=operation.charAt(operation.length()-2) -'0';
+            int index;
+            String splitter="[^\\d]+";
+            String[] ids=operation.split(splitter);
+            index=Integer.parseInt(ids[1]);
+            index-=1;
             if(clientRequest.compareTo("GET")==0){
                 handler.printMessages(messages);
             }
@@ -46,16 +55,17 @@ public class Main {
                 handler.saveHTTPHeader(headers,in);
             }
             else if (clientRequest.compareTo("PUT")==0){
-                System.out.println(clientRequest.length()-1);
-                handler.updatePayloadAt(clientRequest.length()-1,messages,in);
-                handler.updateHTTPHeader(clientRequest.length()-1,headers);
+                System.out.println(operation.length()-1);
+                handler.updatePayloadAt(index,messages,in);
+                handler.updateHTTPHeader(index,headers);
             }
             else if (clientRequest.compareTo("DELETE")==0){
-                handler.deletePayloadAt(clientRequest.length()-1,messages);
-                handler.deleteHTTPHeader(clientRequest.length()-1,messages);
+                System.out.println(index);
+                handler.deletePayloadAt(index,messages);
+                handler.deleteHTTPHeader(index,headers);
             }
-            int temp=handler.saveHTTPHeader(headers,in);
-            int responseId=handler.savePayload(messages,in);
+            System.out.println(messages);
+            System.out.println(headers);
             out.print("CKYADWDAWDWADcu");
             out.flush();
 
