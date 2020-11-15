@@ -130,6 +130,7 @@ public class RequestContext {
 
     public void printMessages(List<String> list){
         System.out.println(list);
+        System.out.println("\n");
     }
 
     public String generateResponse(String input){

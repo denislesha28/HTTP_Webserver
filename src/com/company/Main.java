@@ -11,36 +11,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
-
-    public static void serialiseList(List<String> list,boolean msg) throws IOException {
-        FileOutputStream fos;
-        if(msg) {
-            fos = new FileOutputStream("message_list");
-        }
-        else{
-            fos = new FileOutputStream("header_list");
-        }
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(list);
-        oos.close();
-        fos.close();
-    }
-
-    public static List deserialiseList(List<String>list) throws IOException, ClassNotFoundException {
-        FileInputStream fis = new FileInputStream("message_list");
-        if(fis==null){
-            System.out.println("Could not find a list");
-        }
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        if(ois==null){
-            System.out.println("Could not find a list");
-        }
-        list = (List<String>) ois.readObject();
-
-        ois.close();
-        fis.close();
-        return list;
-    }
     public static void main(String[] args) {
         int portNumber = 1111;
         List<String> messages=new ArrayList<>();
@@ -49,8 +19,9 @@ public class Main {
         try {
             ServerSocket serverSocket = new ServerSocket(portNumber);
             RequestContext handler=new RequestContext();
-            messages=deserialiseList(messages);
-            headers=deserialiseList(headers);
+            ListSerialiser listHandler=new ListSerialiser();
+            messages=listHandler.deserialiseList(messages,true);
+            headers=listHandler.deserialiseList(headers,false);
             String splitter = "[^\\d]+";
             int responseID=0;
             while(true) {
@@ -63,7 +34,7 @@ public class Main {
                     handler.readHeader(in);
                     clientRequest = handler.readHTTPVerb();
                     String operation = handler.readRequest();
-                    if (clientRequest.compareTo("GET") == 0) {
+                    if (clientRequest.compareTo("GET") == 0 && operation.compareTo("quit ")!=0) {
                         handler.printMessages(messages);
                         out.println(handler.generateResponse("Operation successful "));
                         out.flush();
@@ -93,13 +64,21 @@ public class Main {
                         out.println(handler.generateResponse("OK"));
                         out.flush();
 
-                    } else if (operation.compareTo("quit")==0){
+                    } else if (clientRequest.compareTo("GET") == 0 && operation.compareTo("quit ")==0){
+                        System.out.println("Closing Server");
                         serverSocket.close();
                         clientSocket.close();
                         break;
-                }
-                serialiseList(messages, true);
-                serialiseList(headers, false);
+                    }
+                    else {
+                        out.println(handler.generateResponse("Error"));
+                        clientSocket.close();
+                        System.out.println("Wrong command");
+                    }
+
+                listHandler.serialiseList(messages, true);
+                listHandler.serialiseList(headers, false);
+                clientSocket.close();
             }
 
         } catch (IOException | ClassNotFoundException e) {
