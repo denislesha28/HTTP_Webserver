@@ -39,6 +39,9 @@ public class RequestContext {
         }
     }
 
+    public void setHTTPHeader(String input){
+        headerInfo=input;
+    }
     public int saveHTTPHeader(List<String> list,BufferedReader in) throws IOException {
         list.add(headerInfo);
         return list.size();
@@ -101,6 +104,10 @@ public class RequestContext {
         System.out.println("\n");
         payload=null; // empty payload
         return list.size();
+    }
+
+    public String returnPayload(){
+        return payload.toString();
     }
 
 

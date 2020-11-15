@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbe8405c-c075-48f5-a547-61100b3a1966" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/ListSerialiser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/RequestContextTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/curlrequests.sh" beforeDir="false" afterPath="$PROJECT_DIR$/curlrequests.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTTP_Webserver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HTTP_Webserver.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/RequestContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/RequestContext.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,12 +38,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.RequestContextTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="HTTP_Webserver" />
@@ -55,9 +58,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RequestContextTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTP_Webserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RequestContextTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RequestContextTest.testHTTPVerb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTP_Webserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RequestContextTest" />
+      <option name="METHOD_NAME" value="testHTTPVerb" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RequestContextTest.testReadPayload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTP_Webserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RequestContextTest" />
+      <option name="METHOD_NAME" value="testReadPayload" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RequestContextTest.testRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HTTP_Webserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RequestContextTest" />
+      <option name="METHOD_NAME" value="testRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RequestContextTest" />
+        <item itemvalue="JUnit.RequestContextTest.testReadPayload" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.RequestContextTest.testRequest" />
+        <item itemvalue="JUnit.RequestContextTest.testHTTPVerb" />
       </list>
     </recent_temporary>
   </component>
@@ -101,38 +171,38 @@
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="92" y="92" width="1491" height="717" key="DiffContextDialog/0.0.1676.902@0.0.1676.902" timestamp="1604965933586" />
-    <state width="1620" height="222" key="GridCell.Tab.0.bottom" timestamp="1605475611481">
+    <state width="1620" height="222" key="GridCell.Tab.0.bottom" timestamp="1605478871501">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="222" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1605475611481" />
-    <state width="1620" height="222" key="GridCell.Tab.0.center" timestamp="1605475611481">
+    <state width="1620" height="222" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1605478871501" />
+    <state width="1620" height="222" key="GridCell.Tab.0.center" timestamp="1605478871500">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="222" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1605475611481" />
-    <state width="1620" height="222" key="GridCell.Tab.0.left" timestamp="1605475611480">
+    <state width="1620" height="222" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1605478871500" />
+    <state width="1620" height="222" key="GridCell.Tab.0.left" timestamp="1605478871500">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="222" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1605475611480" />
-    <state width="1620" height="222" key="GridCell.Tab.0.right" timestamp="1605475611481">
+    <state width="1620" height="222" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1605478871500" />
+    <state width="1620" height="222" key="GridCell.Tab.0.right" timestamp="1605478871500">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1605475611481" />
-    <state width="1620" height="195" key="GridCell.Tab.1.bottom" timestamp="1605475422650">
+    <state width="1620" height="222" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1605478871500" />
+    <state width="1620" height="195" key="GridCell.Tab.1.bottom" timestamp="1605476552669">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="195" key="GridCell.Tab.1.bottom/0.0.1676.902@0.0.1676.902" timestamp="1605475422650" />
-    <state width="1620" height="195" key="GridCell.Tab.1.center" timestamp="1605475422650">
+    <state width="1620" height="195" key="GridCell.Tab.1.bottom/0.0.1676.902@0.0.1676.902" timestamp="1605476552669" />
+    <state width="1620" height="195" key="GridCell.Tab.1.center" timestamp="1605476552669">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="195" key="GridCell.Tab.1.center/0.0.1676.902@0.0.1676.902" timestamp="1605475422650" />
-    <state width="1620" height="195" key="GridCell.Tab.1.left" timestamp="1605475422650">
+    <state width="1620" height="195" key="GridCell.Tab.1.center/0.0.1676.902@0.0.1676.902" timestamp="1605476552669" />
+    <state width="1620" height="195" key="GridCell.Tab.1.left" timestamp="1605476552669">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="195" key="GridCell.Tab.1.left/0.0.1676.902@0.0.1676.902" timestamp="1605475422650" />
-    <state width="1620" height="195" key="GridCell.Tab.1.right" timestamp="1605475422650">
+    <state width="1620" height="195" key="GridCell.Tab.1.left/0.0.1676.902@0.0.1676.902" timestamp="1605476552669" />
+    <state width="1620" height="195" key="GridCell.Tab.1.right" timestamp="1605476552669">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
-    <state width="1620" height="195" key="GridCell.Tab.1.right/0.0.1676.902@0.0.1676.902" timestamp="1605475422650" />
+    <state width="1620" height="195" key="GridCell.Tab.1.right/0.0.1676.902@0.0.1676.902" timestamp="1605476552669" />
     <state x="230" y="8" key="SettingsEditor" timestamp="1604770931935">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
@@ -141,6 +211,10 @@
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="470" y="233" key="com.intellij.ide.util.TipDialog/0.0.1676.902@0.0.1676.902" timestamp="1605444160250" />
+    <state x="496" y="324" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1605475920441">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="496" y="324" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1676.902@0.0.1676.902" timestamp="1605475920441" />
     <state x="416" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1605468457162">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
@@ -151,8 +225,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="29" />
+          <line>35</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
