@@ -10,16 +10,28 @@ public class RequestContext {
     private String headerInfo;
 
     public void readHeader(BufferedReader in) throws IOException {
-        headerInfo="";
-        String line;
-        while((line=in.readLine()).length() != 0){
-            System.out.println(line);
-            if(line.compareTo("null")==0){
+        headerInfo = "";
+        String line = in.readLine();
+
+        while (true) {
+            if(line==null){
+                line=in.readLine();
                 continue;
             }
-            headerInfo=headerInfo+line+"\n";
+            if (line != null) {
+                System.out.println(line);
+                if (line.compareTo("null") == 0) {
+                    line = in.readLine();
+                    continue;
+                }
+                if (line.length() == 0) {
+                    break;
+                }
+                headerInfo = headerInfo + line + "\n";
+                line = in.readLine();
+            }
+//        headerInfo=headerInfo.replace("null","");
         }
-        headerInfo=headerInfo.replace("null","");
     }
 
     public int saveHTTPHeader(List<String> list,BufferedReader in) throws IOException {
