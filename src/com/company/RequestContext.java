@@ -8,6 +8,11 @@ import java.util.List;
 public class RequestContext {
     private StringBuilder payload;
     private String headerInfo;
+    private String ServerResponse="HTTP/1.1 200 OK.\r\n"+
+            "Server: Denis\r\n"+
+            "Content-Type: text/html\r\n"+
+            "Accept-Ranges: bytes\r\n"+
+            "Content-Length:1\r\n\r\n";
 
     public void readHeader(BufferedReader in) throws IOException {
         headerInfo = "";
@@ -93,6 +98,7 @@ public class RequestContext {
         readPayload(in);
         list.add(payload.toString());
         System.out.println("Payload: "+payload.toString());
+        System.out.println("\n");
         payload=null; // empty payload
         return list.size();
     }
@@ -124,6 +130,10 @@ public class RequestContext {
 
     public void printMessages(List<String> list){
         System.out.println(list);
+    }
+
+    public String generateResponse(String input){
+        return ServerResponse+input;
     }
 
 

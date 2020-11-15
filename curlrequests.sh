@@ -12,5 +12,4 @@ curl -v -X PUT -H "Content-Type: application/json" \
     localhost:1111/messages/1 
 curl -v -X DELETE localhost:1111/messages/2 
 curl -v GET localhost:1111
-    
 
